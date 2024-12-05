@@ -1,0 +1,83 @@
+.program__img {
+  width: 300px;
+}
+.program_content__text {
+  display: flex;
+}
+
+.day-with-lines {
+  position: relative;
+  text-align: center; /* Centers the title */
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--main-color-bright);
+}
+.item__description {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.day-with-lines::before,
+.day-with-lines::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 40%; /* Adjust width as needed */
+  height: 2px; /* Line thickness */
+  background-color: var(--secondary-color-bright); /* Line color */
+}
+
+.day-with-lines::before {
+  left: 0; /* Align to the left side */
+  transform: translateY(-50%); /* Vertically center the line */
+}
+
+.day-with-lines::after {
+  right: 0; /* Align to the right side */
+  transform: translateY(-50%); /* Vertica */
+}
+
+//mobile usual and landscape
+@media screen and (max-width: 767px) {
+  .program_content__text {
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+  }
+}
+
+//tablets and larger
+
+@media screen and (min-width: 768px) {
+  .program__img {
+    width: 350px;
+  }
+  .program_content__text {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+  }
+  .program-list {
+    max-width: 600px;
+  }
+
+  .day-with-lines::before,
+  .day-with-lines::after {
+    width: 30%; /* Adjust width as needed */
+  }
+}
+
+//desktop and larger
+
+@media screen and (min-width: 1199px) {
+  .program_content__text {
+    gap: 200px;
+    justify-content: center;
+  }
+  .day-with-lines::before,
+  .day-with-lines::after {
+    width: 40%;
+  }
+}

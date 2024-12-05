@@ -1,0 +1,38 @@
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.swiper {
+  width: 100%;
+  height: 500px;
+}
+
+.swiper-img {
+  width: 400px;
+  border-radius: 20px;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: var(--secondary-color-bright);
+}
+
+.swiper-scrollbar {
+  background-color: var(--secondary-color-bright);
+}
+.swiper-scrollbar-drag {
+  background-color: var(--main-color-bright);
+}
+
+//mobile usual and landscape
+@media screen and (max-width: 767px) {
+  .swiper-img {
+    width: 300px;
+    border-radius: 20px;
+  }
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: none;
+  }
+}

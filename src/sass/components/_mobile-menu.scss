@@ -1,0 +1,113 @@
+@media screen and (max-width: 767px) {
+  .mobile-menu {
+    overflow: scroll;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    background-color: var(--background-color);
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .mobile-menu.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .mobile-menu__container {
+    position: relative;
+    padding-left: 40px;
+    padding-top: 70px;
+    padding-bottom: 48px;
+    height: 100%;
+  }
+  .mobile-menu__close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    line-height: 0;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover,
+    &:focus {
+      fill: var(--main-color-bright);
+    }
+  }
+  .mobile-menu__wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  .mobile-menu__nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+
+    li:last-child {
+      margin-top: 30px;
+    }
+  }
+  .mobile-menu__nav-link {
+    color: var(--text-color);
+    font-size: 28px;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      color: var(--main-color-bright);
+    }
+  }
+
+  .mobile-menu__bottom {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .mobile-menu__media {
+    display: flex;
+    margin-top: auto;
+    li:not(:last-child) {
+      border-right: 1px solid rgba(33, 33, 33, 0.2);
+    }
+  }
+  .mobile-menu__media-link {
+    @include font(500, 10px, 18px);
+    font-family: "Roboto", sans-serif;
+    letter-spacing: 0.02em;
+
+    color: var(--accent-color);
+
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+  .open-mobile-menu-btn {
+    background-color: transparent;
+    border: none;
+
+    svg {
+      fill: var(--main-color-bright);
+    }
+  }
+}
+
+
+@media screen and (min-width: 768px) {
+  .mobile-menu {
+    display: none;
+  }
+}

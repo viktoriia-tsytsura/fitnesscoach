@@ -1,0 +1,67 @@
+.tariffs-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+.tariffs-list__item {
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.8) 0%, #fff 30%, #eee4e1 100%),
+    linear-gradient(180deg, #fff, #eee4e1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 10px rgba(0, 0, 0, 0.05);
+  border-radius: 20px;
+
+  transition: transform 0.3s ease;
+
+  &:hover,
+  &:focus {
+    transform: scale(1.07);
+  }
+}
+
+.tariffs-list__thumb {
+  padding: 30px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.tariffs-list__desc {
+  li:not(:last-child) {
+    margin-bottom: 20px;
+  }
+  span {
+    font-size: 18px;
+    font-weight: bold;
+  }
+}
+
+//mobile usual and landscape
+@media screen and (max-width: 767px) {
+  .tariffs-list__item {
+    max-width: 400px;
+  }
+}
+
+//tablets and larger
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .tariffs-list__item {
+    max-width: 500px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .tariffs-list {
+    flex-direction: row;
+    justify-content: center;
+    align-items: start;
+    gap: calc((100% - (350px * 3)) / 2);
+  }
+  .tariffs-list__item {
+    width: 350px;
+  }
+}
