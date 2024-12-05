@@ -42,6 +42,7 @@
 //mobile usual and landscape
 @media screen and (max-width: 767px) {
   .tariffs-list__item {
+    width: 80%;
     max-width: 400px;
   }
 }
